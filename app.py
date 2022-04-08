@@ -4,7 +4,7 @@ import streamlit as st
 import wikipedia
 import os
 from jinja2 import Environment,  FileSystemLoader, select_autoescape
-import keyboard as kb
+ 
 
 
 
@@ -54,13 +54,13 @@ if st.button("add next question"):
     )
 
     # create pdf from string using pdfkit
-    data = pdfkit.from_string(html, False)
+    # data = pdfkit.from_string(html, False)
 
 
     st.success("Welcome! You can download the pdf for the question's answer.")
     # here code for genrate download btn
     st.download_button(label="Download",
-                       data=data,
+                       data="data",
                        file_name=lines[0]+".pdf",
                        mime="image/png")
          
